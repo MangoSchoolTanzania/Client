@@ -1,0 +1,89 @@
+<div class="container">
+    <div class="left">
+        <img src="../../assets/svg/volunteer.svg" alt="">
+    </div>
+    <div class="right">
+        <h1>Volunteer Form:</h1>
+        <form action="" class="form">
+            <div *ngIf="this.currentCard === 1" class="card">
+                <h3>Personal Data</h3>
+                <label>Step 1 of 8</label>
+                <input type="text" placeholder="Your First Name">
+                <input type="text" placeholder="Your Last Name">
+                <input type="text" placeholder="Parent First Name">
+                <input type="text" placeholder="Parent Last Name">
+                <button (click)="CurrentCard('+')">Next</button>
+            </div>
+
+            <div *ngIf="this.currentCard === 2" class="card">
+                <h3>Personal Data</h3>
+                <label>Step 2 of 8</label>
+                <input type="email" placeholder="Your Email">
+                <input type="phone" placeholder="Your Phone (with area code)">
+                <input type="date" placeholder="Birth Date">
+                <input type="text" placeholder="Education Level">
+                <button (click)="CurrentCard('-')">Return</button>
+                <button (click)="CurrentCard('+')">Next</button>
+            </div>
+            
+
+            <div *ngIf="this.currentCard === 3" class="card">
+                <h3>Personal Data</h3>
+                <label>Step 3 of 8</label>
+                <input type="text" placeholder="School Name">
+                <input type="email" placeholder="Email">
+                <button (click)="CurrentCard('-')">Return</button>
+                <button (click)="CurrentCard('+')">Next</button>
+            </div>
+
+            <div *ngIf="this.currentCard === 4" class="card">
+                <h3>Emergency Data</h3>
+                <label>Step 4 of 8</label>
+
+                <input type="text" placeholder="Name">
+                <input type="text" placeholder="Phone Number">
+                <input type="text" placeholder="Relationship">
+                <button (click)="CurrentCard('-')">Return</button>
+                <button (click)="CurrentCard('+')">Next</button>
+            </div>
+
+            <div *ngIf="this.currentCard === 5" class="card">
+                <h3>Avaiability Information</h3>
+                <label>Step 5 of 8</label>
+                <button (click)="CurrentCard('-')">Return</button>
+                <button (click)="CurrentCard('+')">Next</button>
+            </div>
+
+            <div *ngIf="this.currentCard === 6" class="card">
+                <h3>Aditional Information</h3>
+                <label>Step 6 of 8</label>
+
+                <h3>Why do you wish to be a volunteer in this program.</h3>
+                <textarea name="" id="" cols="30" rows="5" placeholder="message"></textarea>
+
+                <button (click)="CurrentCard('-')">Return</button>
+                <button (click)="CurrentCard('+')">Next</button>
+            </div>
+
+            <div *ngIf="this.currentCard === 7" class="card">
+                <h3>Aditional Information</h3>
+                <label>Step 7 of 8</label>
+                <h3>Please state your other volunteering experiences.</h3>
+                <textarea name="" id="" cols="30" rows="5" placeholder="message"></textarea>
+                <button (click)="CurrentCard('-')">Return</button>
+                <button (click)="CurrentCard('+')">Next</button>
+            </div>
+
+            <div *ngIf="this.currentCard === 8" class="card">
+                <h3>Aditional Information</h3>
+                <label>Step 8 of 8</label>
+                <h3>What are your interests or skills we should know about?</h3>
+                <textarea name="" id="" cols="30" rows="5" placeholder="message"></textarea>
+                <button (click)="CurrentCard('-')">Return</button>
+                <button>Send</button>
+            </div>
+
+        </form>
+    </div>
+
+</div>

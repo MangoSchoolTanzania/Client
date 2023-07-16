@@ -1,0 +1,10 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+
+:root{
+    --background-primary:#0e0e0e;
+    --background-secundary:#1e1e1e;
+    --text-primary:#f3f4f4;
+    --details-primary:#df072e;
+}
