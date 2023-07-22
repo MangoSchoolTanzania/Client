@@ -1,9 +1,13 @@
 <div class="container">
-    <h1>Write your message:</h1>
-    <form action="" class="form">
-        <input type="text" placeholder="Name">
-        <input type="email" placeholder="Email">
-        <textarea name="" id="" cols="30" rows="10" placeholder="message"></textarea>
-        <button>Send</button>
+    <div class="left">
+        <img src="../../assets/svg/contactUs.svg" alt="">
+    </div>
+    <form class="right" [formGroup]="contactForm">
+        <label *ngIf="this.invalidForm" class="error">Please fill all the blanks</label>
+        <h1>Write your message:</h1>
+        <input formControlName="name" type="text" placeholder="Name">
+        <input formControlName="email" type="email" placeholder="Email">
+        <textarea formControlName="message" name="" id="" cols="30" rows="10" placeholder="message"></textarea>
+        <button (click)="send()">Send</button>
     </form>
-  </div>
+</div>

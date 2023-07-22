@@ -35,22 +35,6 @@ body {
   flex-direction: column;
 }
 
-
-
-
-.form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-}
-
-.form>input,
-textarea,
-button {
-  margin-top: 0.5 rem;
-}
-
 .card {
   width: 80%;
   margin: 0 auto; /* Center the card horizontally */
@@ -62,37 +46,6 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.card input[type="email"],
-.card input[type="phone"],
-.card input[type="date"],
-.card input[type="text"] {
-  width: 100%;
-}
-
-input,
-textarea {
-  margin-top: 0.2rem;
-  border-style: solid;
-  border-radius: 1rem;
-  font-size: larger;
-  padding: 1rem;
-  font-weight: 500;
-}
-
-button {
-  border-radius: 1rem;
-  font-size: larger;
-  margin-top: 0.4rem;
-  padding: 1rem;
-  font-weight: 500;
-  padding: 1rem;
-  border: none;
-}
-
-input:hover {
-  border-color: green;
 }
 
 @media only screen and (max-width: 600px) {

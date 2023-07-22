@@ -1,10 +1,63 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import "~@fortawesome/fontawesome-free/css/all.css";
 
-
 :root{
     --background-primary:#0e0e0e;
     --background-secundary:#1e1e1e;
     --text-primary:#f3f4f4;
     --details-primary:#df072e;
 }
+
+/* global error style */
+
+.error{
+    color: var(--details-primary);
+}
+
+/* global input style */
+
+.card input[type="email"],
+.card input[type="phone"],
+.card input[type="date"],
+.card input[type="text"] {
+  width: 100%;
+}
+
+input,
+textarea {
+  margin-top: 0.2rem;
+  border-style: solid;
+  border-radius: 1rem;
+  font-size: larger;
+  padding: 1rem;
+  font-weight: 500;
+}
+
+button {
+  border-radius: 1rem;
+  font-size: larger;
+  margin-top: 0.4rem;
+  padding: 1rem;
+  font-weight: 500;
+  padding: 1rem;
+  border: none;
+}
+
+input:hover {
+  border-color: green;
+}
+
+/* global form configuration */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+  
+  .form>input,
+  textarea,
+  button {
+    margin-top: 0.5 rem;
+  }
