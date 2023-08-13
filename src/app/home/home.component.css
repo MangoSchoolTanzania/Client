@@ -5,7 +5,7 @@
 .hero {
     background-color: var(--background-secundary);
     color: var(--text-primary);
-    padding: 100px 0;
+    padding: 3rem 0;
     text-align: center;
   }
   
@@ -48,6 +48,7 @@
   .right {
     width: 50%; /* Adjust the width as needed */
     height: auto; /* Adjust the height as needed */
+    padding-right: 5rem;
   }
 
   .left {
