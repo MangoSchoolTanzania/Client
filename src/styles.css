@@ -42,6 +42,11 @@ button {
   font-weight: 500;
   padding: 1rem;
   border: none;
+  width: 10rem;
+}
+
+button:hover{
+  background-color: green;
 }
 
 input:hover {

@@ -14,6 +14,8 @@ import { ContactComponent } from './contact/contact.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ReactiveFormsModule } from '@angular/forms';
+import { environment } from './environment';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -33,9 +35,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule, 
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [environment],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
