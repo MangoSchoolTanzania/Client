@@ -1,6 +1,5 @@
 import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
-import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { AboutComponent } from "./Pages/about/about.component";
@@ -16,6 +15,11 @@ import { AppComponent } from "./app.component";
 import { environment } from "./environment";
 import { FooterComponent } from "./shared/footer/footer.component";
 import { NavbarComponent } from "./shared/navbar/navbar.component";
+import { AdminPanelComponent } from './Pages/admin/admin-panel/admin-panel.component';
+import { AdminManageResultsComponent } from './Pages/admin/admin-panel/admin-manage-results/admin-manage-results.component';
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { AddUpdateResultComponent } from './Pages/admin/admin-panel/admin-manage-results/add-update-result/add-update-result.component';
+import { AdminManageClassesComponent } from './Pages/admin/admin-panel/admin-manage-classes/admin-manage-classes.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +34,10 @@ import { NavbarComponent } from "./shared/navbar/navbar.component";
     ContactComponent,
     GalleryComponent,
     AdminComponent,
+    AdminPanelComponent,
+    AdminManageResultsComponent,
+    AddUpdateResultComponent,
+    AdminManageClassesComponent,
   ],
   imports: [
     ReactiveFormsModule,

@@ -6,6 +6,8 @@
     --background-secundary:#1e1e1e;
     --text-primary:#f3f4f4;
     --details-primary:#df072e;
+    --details-secondary: #FFA500;
+    --details-third: #008000;
 }
 
 /* global error style */
@@ -44,14 +46,16 @@ button {
   padding: 1rem;
   border: none;
   width: 10rem;
+  color: var(--text-primary);
+  background-color: var(--details-third);
 }
 
 button:hover{
-  background-color: green;
+  opacity:0.5 ;
 }
 
 input:hover {
-  border-color: green;
+  border-color: var(--details-third);
 }
 
 /* global form configuration */

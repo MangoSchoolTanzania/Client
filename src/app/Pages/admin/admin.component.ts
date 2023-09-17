@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { LoginViewModel } from 'src/app/ViewModel/LoginViewModel';
 import { LoginService } from 'src/app/services/login.service';
 import { TokenService } from 'src/app/services/token.service';
@@ -17,7 +18,7 @@ export class AdminComponent implements OnInit{
   });
   loginViewModel = new LoginViewModel();
 
-  constructor(private loginService:LoginService,private tokenService:TokenService) {
+  constructor(private loginService:LoginService,private tokenService:TokenService,private router: Router) {
     
   }
   ngOnInit(): void {
@@ -44,9 +45,10 @@ export class AdminComponent implements OnInit{
   
     this.loginService.login(loginViewModel).subscribe((response)=>{
       this.tokenService.token = response;
+      debugger;
+      this.router.navigate(['admin-panel'])
     },(error)=>{
       debugger;
-
     },()=>{
 
     });

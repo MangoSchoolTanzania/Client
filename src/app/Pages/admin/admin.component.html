@@ -5,8 +5,8 @@
     <div class="right" [formGroup]="loginForm">
         <h1>Login:</h1>
         <label *ngIf="this.invalidForm" class="error">Please fill all the blanks</label>
-        <input formControlName="email" type="text" placeholder="Email">
-        <input formControlName="password" type="email" placeholder="Password">
+        <input formControlName="email" type="email" placeholder="Email">
+        <input formControlName="password" type="password" placeholder="Password">
         <button (click)="send()">Login</button>
     </div>
 </div>

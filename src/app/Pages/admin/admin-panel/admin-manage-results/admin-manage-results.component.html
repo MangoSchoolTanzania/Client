@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="grid">
+      <div class="access">
+      </div>
+      <div class="filter">
+        <select class="select__element" (change)="FilterChange($event)">
+          <option  *ngFor="let obj of this.options" [value]="obj.name">{{obj.name}}</option>
+        </select>
+        <input type="text" class="filter_input" [(ngModel)]="this.stringParam" *ngIf="this.filterSelectedValue != ''" [placeholder]="'Type the: ' + this.filterSelectedValue">
+        <button (click)="filter()">Filter</button>
+        <button class="add__button" (click)="AddUpdateResult()">Add New Result</button>
+      </div>
+  
+      <div class="public table-responsive">
+        <table class="table ">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Class Name</th>
+              <th scope="col">Year</th>
+              <th scope="col">Month</th>
+              <th scope="col">Student Name</th>
+              <th scope="col">Arith</th>
+              <th scope="col">Kus</th>
+              <th scope="col">HE</th>
+              <th scope="col">SA</th>
+              <th scope="col">Writ</th>
+              <th scope="col">Read</th>
+              <th scope="col">Pos</th>
+              <th scope="col">Ave</th>
+              <th scope="col">Total</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of resultArray; let i = index">
+              <th scope="row">{{ i + 1 }}</th>
+              <td>{{ item.className }}</td>
+              <td>{{ item.classYear }}</td>
+              <td>{{ item.classMonth }}</td>
+              <td>{{ item.name }}</td>
+              <td>{{ item.arith }}</td>
+              <td>{{ item.kus }}</td>
+              <td>{{ item.he }}</td>
+              <td>{{ item.sa }}</td>
+              <td>{{ item.writ }}</td>
+              <td>{{ item.read }}</td>
+              <td>{{ item.pos }}</td>
+              <td>{{ item.ave }}</td>
+              <td>{{ item.total }}</td>
+                <td>
+                    <button (click)="AddUpdateResult()" class="action__button">Update</button>
+                    <button class="action__button">Delete</button>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+  
+        <div class="buttons">
+          <button (click)="ChangePage('-')" class="button"> Back </button>
+          <button (click)="ChangePage('+')" class="button"> Next </button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
