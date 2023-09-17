@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="left">
+        <img src="../../assets/svg/admin.svg" alt="">
+    </div>
+    <div class="right" [formGroup]="loginForm">
+        <h1>Login:</h1>
+        <label *ngIf="this.invalidForm" class="error">Please fill all the blanks</label>
+        <input formControlName="email" type="text" placeholder="Email">
+        <input formControlName="password" type="email" placeholder="Password">
+        <button (click)="send()">Login</button>
+    </div>
+</div>

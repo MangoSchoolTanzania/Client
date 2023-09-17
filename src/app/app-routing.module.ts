@@ -1,12 +1,13 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
-import { GalleryComponent } from './gallery/gallery.component';
-import { ResultsComponent } from './results/results.component';
-import { ScholarshipComponent } from './scholarship/scholarship.component';
-import { VolunteerComponent } from './volunteer/volunteer.component';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { AboutComponent } from "./Pages/about/about.component";
+import { AdminComponent } from "./Pages/admin/admin.component";
+import { ContactComponent } from "./Pages/contact/contact.component";
+import { GalleryComponent } from "./Pages/gallery/gallery.component";
+import { HomeComponent } from "./Pages/home/home.component";
+import { ResultsComponent } from "./Pages/results/results.component";
+import { ScholarshipComponent } from "./Pages/scholarship/scholarship.component";
+import { VolunteerComponent } from "./Pages/volunteer/volunteer.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'results', component: ResultsComponent, pathMatch: 'full' },
   { path: 'scholarship', component: ScholarshipComponent, pathMatch: 'full' },
   { path: 'volunteer', component: VolunteerComponent, pathMatch: 'full' },
+  { path: 'admin', component: AdminComponent, pathMatch: 'full' },
 ];
 
 @NgModule({
