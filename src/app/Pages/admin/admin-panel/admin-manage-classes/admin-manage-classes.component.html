@@ -1,1 +1,19 @@
-<p>admin-manage-classes works!</p>
+<div class="container">
+    <div class="left">
+        <img src="../../../../assets/svg/admin.svg" alt="">
+    </div>
+    <div class="right">
+        <div [formGroup]="addClassForm" *ngIf="this.addNewClass" class="top">
+            <input formControlName="className" type="text" placeholder="Class Name">
+            <input formControlName="classYear" type="text" placeholder="Class Year">
+            <input formControlName="classMonth" type="text" placeholder="Class Month">
+            <button class="button_element" (click)="add()">Add</button>
+
+        </div>
+        <div class="down">
+            <button class="button_element" (click)="addClass()">Add a new Class</button>
+            <h1 *ngIf="this.classes.length == 0">You have no classes added</h1>
+
+        </div>
+    </div>
+</div>
