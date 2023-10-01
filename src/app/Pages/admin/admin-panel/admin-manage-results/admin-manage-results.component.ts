@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ResultModelView } from 'src/app/modelViews/ResultModelView';
 import { results } from 'src/app/services/results.service';
 
@@ -17,12 +17,13 @@ export class AdminManageResultsComponent implements OnInit{
   filterSelectedValue = 'All';
   stringParam = 'All'
 
-  constructor(private results: results,private router:Router) {
+  constructor(private results: results,private router:Router,private route: ActivatedRoute) {
 
   }
 
   ngOnInit(): void {
-    this.getGrade();
+    const classId = Number(this.route.snapshot.queryParamMap.get('classId'));
+    this.getResultsByClass(classId);
     this.setFormOptions();
   }
 
@@ -30,8 +31,8 @@ export class AdminManageResultsComponent implements OnInit{
     this.options = [{ name:'All'}, {name: 'Class' }, { name: 'Year' }, { name: 'Student' }]
   }
 
-  getGrade() {
-    this.results.getGrade(this.currentPage,this.filterSelectedValue,this.stringParam).subscribe((response) => {
+  getResultsByClass(classId:number){
+    this.results.getResultByClass(classId).subscribe((response) => {
       this.resultArray = response;
     }, (error) => {
       console.error('Error:', error);
@@ -44,27 +45,6 @@ export class AdminManageResultsComponent implements OnInit{
     this.filterSelectedValue = (event.target as HTMLSelectElement).value;
   }
 
-  filter(){
-    this.currentPage = 0;
-    this.stringParam == "" ? this.stringParam = "All" : this.stringParam;
-    this.getGrade();  
-  }
-
-  ChangePage(action: string) {
-    if (action === '+') {
-      this.currentPage++;
-    }
-
-    if (action === '-') {
-      this.currentPage--;
-    }
-
-    if (this.currentPage < 0) {
-      this.currentPage = 0;
-    }
-
-    this.getGrade();
-  }
 
   AddUpdateResult(){
     this.router.navigate(['add-update-result'])

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ClassViewModel } from 'src/app/ViewModel/ClassViewModel';
 import { ClassModelView } from 'src/app/modelViews/ClassModelView';
 import { ClassService } from 'src/app/services/class.service';
@@ -10,33 +11,42 @@ import { ClassService } from 'src/app/services/class.service';
   styleUrls: ['./admin-manage-classes.component.css']
 })
 export class AdminManageClassesComponent implements OnInit {
-  classes:ClassModelView[] = [];
+  classes: ClassModelView[] = [];
   addNewClass = false;
   page = 0;
+  addUpdateText = 'Add'
+  idToUpdate:number = 0;
   addClassForm = new FormGroup({
     className: new FormControl('', Validators.required),
     classYear: new FormControl('', Validators.required),
     classMonth: new FormControl('', Validators.required),
   });
-  constructor(private classService: ClassService) {
+  constructor(private classService: ClassService,private router:Router) {
 
   }
   ngOnInit(): void {
     this.getClasses();
   }
 
-  getClasses(){
-    this.classService.getClass(this.page).subscribe((response)=>{
-      debugger;
+  getClasses() {
+    this.classService.getClass(this.page).subscribe((response) => {
       this.classes = response;
-    },(error)=>{
+    }, (error) => {
 
-    },()=>{
+    }, () => {
 
     })
   }
 
   addClass() { this.addNewClass = !this.addNewClass; }
+  addUpdate() {
+    if (this.addUpdateText === 'Add') {
+      this.add();
+    }
+
+    this.update(this.idToUpdate);
+  }
+
   add() {
     if (!this.addClassForm.valid) { return; }
 
@@ -53,14 +63,63 @@ export class AdminManageClassesComponent implements OnInit {
     this.classService.addClass(classViewModel).subscribe((response) => {
       this.addClassForm.reset();
       this.addNewClass = false;
+      this.getClasses();
+    }, (error) => {
+
+    }, () => {
+
+    })
+  }
+  update(id:number) {
+    const { className, classYear, classMonth } = this.addClassForm.value;
+
+    const classViewModel: ClassViewModel = {
+      id: id,
+      isActive: true,
+      month: classMonth || '',
+      name: className || '',
+      year: classYear || ''
+    };
+    this.classService.updateClass(classViewModel).subscribe((response) => {
+      this.addUpdateText = 'Add';
+      this.addClassForm.reset();
+      this.addNewClass = false;
+      this.getClasses();
+    }, (error) => {
+
+    }, () => {
+
+    })
+  }
+
+  updateLabel(id: number) {
+    this.addUpdateText = 'Update'
+    this.addNewClass = true;
+    let updateClass = this.classes.find(x => x.id == id);
+    if (!updateClass) return;
+
+    this.addClassForm.setValue({
+      className: updateClass.name,
+      classYear: updateClass.year,
+      classMonth: updateClass.month,
+    });
+    this.idToUpdate = id
+  }
+  delete(id: number) {
+    this.classService.deleteClass(id).subscribe((response) => {
+      this.getClasses();
+      this.addClassForm.reset();
+      this.addNewClass = false;
 
     }, (error) => {
 
     }, () => {
 
     })
+  }
 
-
+  showResults(classId: number) {
+    this.router.navigate(['admin-manage-results'], { queryParams: { classId: classId } });
   }
 
 }

@@ -43,25 +43,7 @@ body {
     margin-left: 1rem;
   }
 
-  .buttons{
-    display: flex;
-  }
-
-  .buttons > button {
-    margin-right: 1rem;
-  }
-
-  .action__button{
-    margin-right: 1rem;
-  }
-
-  .action__button:nth-child(1) {
-    background-color: var(--details-secondary);
-  }
   
-  .action__button:nth-child(2) {
-    background-color: var(--details-primary);
-  }
 
   @media only screen and (max-width: 600px) {
     .container {

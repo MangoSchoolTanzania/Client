@@ -58,6 +58,26 @@ input:hover {
   border-color: var(--details-third);
 }
 
+.buttons{
+  display: flex;
+}
+
+.buttons > button {
+  margin-right: 1rem;
+}
+
+.action__button{
+  margin-right: 1rem;
+}
+
+.action__button:nth-child(1) {
+  background-color: var(--details-secondary);
+}
+
+.action__button:nth-child(2) {
+  background-color: var(--details-primary);
+}
+
 /* global form configuration */
 
 .form {
@@ -71,4 +91,18 @@ input:hover {
   textarea,
   button {
     margin-top: 0.5 rem;
+  }
+
+  /* global card */ 
+  .card {
+    width: 80%;
+    margin: 0 auto; /* Center the card horizontally */
+    padding: 5rem;
+    border-style: solid;
+    border-radius: 1rem;
+    border-width: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }

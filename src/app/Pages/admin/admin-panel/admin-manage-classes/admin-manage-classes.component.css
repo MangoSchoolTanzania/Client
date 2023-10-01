@@ -31,10 +31,10 @@ body {
     height: auto;
     /* Adjust the height as needed */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
   }
   
   .left {
@@ -59,6 +59,23 @@ body {
   textarea,
   button {
     margin-top: 0.5 rem;
+  }
+
+  .card_manage_class {
+    padding: 5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-style: solid;
+    border-radius: 1rem;
+    border-width: 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .update_delete > button {
+    margin-right: 1 rem;
   }
   
   @media only screen and (max-width: 600px) {

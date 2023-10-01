@@ -31,7 +31,7 @@ export class ClassService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`, // Set the Authorization header with the token
+        Authorization: `Bearer ${token}`, 
       }),
     };
 
@@ -52,5 +52,34 @@ export class ClassService {
         });
       })
     );
+  }
+
+  deleteClass(id:number){
+    const token = this.tokenService.getFromLocalsotrage();
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      })
+    };
+    const url = this.env.BaseUrl + 'Class' + `/${id}`;
+
+    return this.http.delete(url,httpOptions);
+
+  }
+
+  updateClass(ClassViewModel: ClassViewModel){
+    const token = this.tokenService.getFromLocalsotrage();
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      })
+    };
+
+    const url = this.env.BaseUrl + 'Class' ;
+    return this.http.put(url, ClassViewModel, httpOptions);
   }
 }

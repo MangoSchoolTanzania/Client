@@ -45,10 +45,8 @@ export class AdminComponent implements OnInit{
   
     this.loginService.login(loginViewModel).subscribe((response)=>{
       this.tokenService.addToLocalStorage(response);
-      debugger;
       this.router.navigate(['admin-panel'])
     },(error)=>{
-      debugger;
     },()=>{
 
     });

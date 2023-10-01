@@ -17,9 +17,6 @@ export class AdminPanelComponent {
     if(action == 'manage-classes'){
       this.router.navigate(['admin-manage-classes']);
     }
-    if(action == 'manage-results'){
-      this.router.navigate(['admin-manage-results']);
-    }
     if(action == 'manage-users'){
       this.router.navigate(['admin-manage-users']);
     }

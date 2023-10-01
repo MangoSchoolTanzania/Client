@@ -36,18 +36,7 @@ body {
   flex-direction: column;
 }
 
-.card {
-  width: 80%;
-  margin: 0 auto; /* Center the card horizontally */
-  padding: 5rem;
-  border-style: solid;
-  border-radius: 1rem;
-  border-width: 0.2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+
 
 @media only screen and (max-width: 600px) {
   .container {
