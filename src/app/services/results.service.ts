@@ -4,6 +4,7 @@ import { environment } from '../environment';
 import { ResultModelView } from '../modelViews/ResultModelView';
 import { Observable, map } from 'rxjs';
 import { TokenService } from './token.service';
+import { ResultViewModel } from '../ViewModel/ResultViewModel';
 
 @Injectable({
   providedIn: 'root'
@@ -39,5 +40,31 @@ export class results{
         return response;
       })
     );
+  }
+
+  deleteResult(resultId:number){
+    
+    const token = this.tokenService.getFromLocalsotrage();
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`, 
+      }),
+    };
+    const url = this.env.BaseUrl + `Result/${resultId}`
+    return this.http.delete(url,httpOptions);
+  }
+
+  updateResult(result:ResultViewModel){
+    const token = this.tokenService.getFromLocalsotrage();
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`, 
+      }),
+    };
+    
+    const url = this.env.BaseUrl + `Result/`
+    return this.http.put(url,result,httpOptions);
   }
 }

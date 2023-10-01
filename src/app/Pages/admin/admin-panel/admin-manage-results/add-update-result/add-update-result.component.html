@@ -1,12 +1,30 @@
 <div class="container">
-    <div class="left">
-        <img src="../../../../assets/svg/admin.svg" alt="">
-    </div>
     <div class="right">
-        <h1>Add - Update Result</h1>
-
-        <input type="text" placeholder="" formControlName="">
-
-        <button class="button_element" (click)="send()">See Contact Messages</button>
+      <h1>Add - Update Result</h1>
+  
+      <form class="form" [formGroup]="resultForm" (ngSubmit)="send()">
+        <label>Student Name</label>
+        <input type="text" placeholder="Name" formControlName="name">
+        <label>Arith</label>
+        <input type="text" placeholder="Arith" formControlName="arith">
+        <label>Kus</label> 
+        <input type="text" placeholder="Kus" formControlName="kus">
+        <label>He</label> 
+        <input type="text" placeholder="He" formControlName="he">
+        <label>Sa</label> 
+        <input type="text" placeholder="Sa" formControlName="sa">
+        <label>Write</label> 
+        <input type="text" placeholder="Writ" formControlName="writ">
+        <label>Read</label> 
+        <input type="text" placeholder="Read" formControlName="read">
+        <label>Pos</label> 
+        <input type="text" placeholder="Pos" formControlName="pos">
+        <label>Total</label> 
+        <input type="text" placeholder="Total" formControlName="total">
+        <label>Ave</label> 
+        <input type="text" placeholder="Ave" formControlName="ave">
+        <button class="button_element" (click)="send()">Send</button>
+      </form>
     </div>
-</div>
+  </div>
+  

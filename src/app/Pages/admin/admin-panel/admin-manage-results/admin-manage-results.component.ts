@@ -16,14 +16,14 @@ export class AdminManageResultsComponent implements OnInit{
 
   filterSelectedValue = 'All';
   stringParam = 'All'
-
+  classId:number = 0
   constructor(private results: results,private router:Router,private route: ActivatedRoute) {
 
   }
 
   ngOnInit(): void {
-    const classId = Number(this.route.snapshot.queryParamMap.get('classId'));
-    this.getResultsByClass(classId);
+    this.classId = Number(this.route.snapshot.queryParamMap.get('classId'));
+    this.getResultsByClass(this.classId);
     this.setFormOptions();
   }
 
@@ -46,7 +46,39 @@ export class AdminManageResultsComponent implements OnInit{
   }
 
 
-  AddUpdateResult(){
-    this.router.navigate(['add-update-result'])
+  UpdateResult(result:any){
+    this.router.navigate(['add-update-result'], {
+      queryParams: {
+        id: result.id,
+        isActive: result.isActive,
+        name: result.name,
+        arith: result.arith,
+        kus: result.kus,
+        he: result.he,
+        sa: result.sa,
+        writ: result.writ,
+        read: result.read,
+        total: result.total,
+        ave: result.ave,
+        pos: result.pos,
+        className: result.className,
+        classYear: result.classYear,
+        classMonth: result.classMonth
+      }
+    });
+  }
+
+  AddResult(){
+    this.router.navigate(['add-update-result']);
+  }
+
+  DeleteResult(resultId:number){
+    this.results.deleteResult(resultId).subscribe((response)=>{
+      this.getResultsByClass(this.classId);
+    },(error)=>{
+
+    },()=>{
+
+    })
   }
 }

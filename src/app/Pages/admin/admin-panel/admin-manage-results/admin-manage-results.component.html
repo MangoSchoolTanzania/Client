@@ -3,7 +3,7 @@
       <div class="access">
       </div>
       <div class="filter">
-        <button class="add__button" (click)="AddUpdateResult()">Add New Result</button>
+        <button class="add__button" (click)="AddResult()">Add New Result</button>
       </div>
   
       <div *ngIf="resultArray.length > 0" class="public table-responsive">
@@ -44,8 +44,8 @@
               <td>{{ item.ave }}</td>
               <td>{{ item.total }}</td>
                 <td>
-                    <button (click)="AddUpdateResult()" class="action__button">Update</button>
-                    <button class="action__button">Delete</button>
+                    <button (click)="UpdateResult(item)" class="action__button">Update</button>
+                    <button (click)="DeleteResult(item.id)" class="action__button">Delete</button>
                 </td>
             </tr>
           </tbody>
