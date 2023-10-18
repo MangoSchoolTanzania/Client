@@ -67,4 +67,17 @@ export class results{
     const url = this.env.BaseUrl + `Result/`
     return this.http.put(url,result,httpOptions);
   }
+
+  addResult(result:ResultViewModel){
+    const token = this.tokenService.getFromLocalsotrage();
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`, 
+      }),
+    };
+    
+    const url = this.env.BaseUrl + `Result/`
+    return this.http.post(url,result,httpOptions);
+  }
 }

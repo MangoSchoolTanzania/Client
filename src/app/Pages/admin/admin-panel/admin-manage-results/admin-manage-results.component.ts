@@ -69,7 +69,7 @@ export class AdminManageResultsComponent implements OnInit{
   }
 
   AddResult(){
-    this.router.navigate(['add-update-result']);
+    this.router.navigate(['add-update-result'], { queryParams: { classId: this.classId } });
   }
 
   DeleteResult(resultId:number){

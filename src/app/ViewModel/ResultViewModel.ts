@@ -12,4 +12,5 @@ export class ResultViewModel{
     Total: number = 0;
     Ave: number = 0;
     Pos: number = 0;
+    ClassId:number = 0;
 }

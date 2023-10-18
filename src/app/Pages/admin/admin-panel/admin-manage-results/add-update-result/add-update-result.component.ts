@@ -11,6 +11,8 @@ import { results } from 'src/app/services/results.service';
   styleUrls: ['./add-update-result.component.css']
 })
 export class AddUpdateResultComponent implements OnInit {
+  isUpdateContext:boolean = false;
+  classId:number = 0;
   resultModel:ResultModelView = new ResultModelView();
   resultViewModel: ResultViewModel = new ResultViewModel();
   resultForm = new FormGroup({
@@ -29,15 +31,23 @@ export class AddUpdateResultComponent implements OnInit {
     className: new FormControl('',Validators.required),
     classYear: new FormControl('',Validators.required),
     classMonth: new FormControl('',Validators.required),
+    classId: new FormControl('',Validators.required),
   });
   constructor(private ActivatedRoute: ActivatedRoute,private resultService:results,private route:Router) {
     
   }
   ngOnInit(): void {
-    this.getResultFromRoute();
+    this.classId = Number(this.ActivatedRoute.snapshot.queryParamMap.get('classId'));
+
+    const paramsId = this.ActivatedRoute.snapshot.queryParamMap.get('id');
+    if(paramsId){
+      this.isUpdateContext = true;
+      this.getResultFromRoute();
+    }
   }
 
     getResultFromRoute() {
+      
     const id = this.ActivatedRoute.snapshot.queryParamMap.get('id');
     const isActive = this.ActivatedRoute.snapshot.queryParamMap.get('isActive');
     const name = this.ActivatedRoute.snapshot.queryParamMap.get('name');
@@ -53,6 +63,7 @@ export class AddUpdateResultComponent implements OnInit {
     const className = this.ActivatedRoute.snapshot.queryParamMap.get('className');
     const classYear = this.ActivatedRoute.snapshot.queryParamMap.get('classYear');
     const classMonth = this.ActivatedRoute.snapshot.queryParamMap.get('classMonth');
+    const classId = this.ActivatedRoute.snapshot.queryParamMap.get('classId');
   
     // Set the values in your form
     this.resultForm.setValue({
@@ -70,22 +81,23 @@ export class AddUpdateResultComponent implements OnInit {
       pos,
       className,
       classYear,
-      classMonth
+      classMonth,
+      classId
     });
   }
   send(){
-    if(this.resultModel){
+    debugger;
+    if(this.isUpdateContext){
       this.update();
     }
 
-    if(!this.resultModel){
+    if(!this.isUpdateContext){
       this.add();
     }
   }
 
   update(){
     if(!this.resultForm.valid){return;}
-
     this.resultViewModel = {
       Id: this.resultForm.controls['id'].value ? Number(this.resultForm.controls['id'].value) : 0,
       Name: this.resultForm.controls['name'].value ? this.resultForm.controls['name'].value : '',
@@ -98,6 +110,7 @@ export class AddUpdateResultComponent implements OnInit {
       Total: this.resultForm.controls['total'].value ? Number(this.resultForm.controls['total'].value) : 0,
       Ave: this.resultForm.controls['ave'].value ? Number(this.resultForm.controls['ave'].value) : 0,
       Pos: this.resultForm.controls['pos'].value ? Number(this.resultForm.controls['pos'].value) : 0,
+      ClassId: this.resultForm.controls['classId'].value ? Number(this.resultForm.controls['classId'].value) : this.classId
     };
 
     this.resultService.updateResult(this.resultViewModel).subscribe((response)=>{
@@ -108,5 +121,27 @@ export class AddUpdateResultComponent implements OnInit {
 
     })
   }
-  add(){}
+  add(){
+    this.resultViewModel = {
+      Id: this.resultForm.controls['id'].value ? Number(this.resultForm.controls['id'].value) : 0,
+      Name: this.resultForm.controls['name'].value ? this.resultForm.controls['name'].value : '',
+      Arith: this.resultForm.controls['arith'].value ? Number(this.resultForm.controls['arith'].value) : 0,
+      Kus: this.resultForm.controls['kus'].value ? Number(this.resultForm.controls['kus'].value) : 0,
+      HE: this.resultForm.controls['he'].value ? Number(this.resultForm.controls['he'].value) : 0,
+      SA: this.resultForm.controls['sa'].value ? Number(this.resultForm.controls['sa'].value) : 0,
+      Writ: this.resultForm.controls['writ'].value ? Number(this.resultForm.controls['writ'].value) : 0,
+      Read: this.resultForm.controls['read'].value ? Number(this.resultForm.controls['read'].value) : 0,
+      Total: this.resultForm.controls['total'].value ? Number(this.resultForm.controls['total'].value) : 0,
+      Ave: this.resultForm.controls['ave'].value ? Number(this.resultForm.controls['ave'].value) : 0,
+      Pos: this.resultForm.controls['pos'].value ? Number(this.resultForm.controls['pos'].value) : 0,
+      ClassId:this.classId
+    };
+    this.resultService.addResult(this.resultViewModel).subscribe((response)=>{
+      this.route.navigate(['admin-manage-results'], { queryParams: { classId: this.classId } });
+    },(error)=>{
+
+    },()=>{
+
+    })
+  }
 }
