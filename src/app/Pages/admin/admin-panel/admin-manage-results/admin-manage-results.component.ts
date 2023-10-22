@@ -63,7 +63,8 @@ export class AdminManageResultsComponent implements OnInit{
         pos: result.pos,
         className: result.className,
         classYear: result.classYear,
-        classMonth: result.classMonth
+        classMonth: result.classMonth,
+        classId:this.classId
       }
     });
   }

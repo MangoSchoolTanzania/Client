@@ -64,6 +64,7 @@ export class AddUpdateResultComponent implements OnInit {
     const classYear = this.ActivatedRoute.snapshot.queryParamMap.get('classYear');
     const classMonth = this.ActivatedRoute.snapshot.queryParamMap.get('classMonth');
     const classId = this.ActivatedRoute.snapshot.queryParamMap.get('classId');
+    this.classId = Number(this.ActivatedRoute.snapshot.queryParamMap.get('classId'));
   
     // Set the values in your form
     this.resultForm.setValue({
@@ -97,7 +98,6 @@ export class AddUpdateResultComponent implements OnInit {
   }
 
   update(){
-    if(!this.resultForm.valid){return;}
     this.resultViewModel = {
       Id: this.resultForm.controls['id'].value ? Number(this.resultForm.controls['id'].value) : 0,
       Name: this.resultForm.controls['name'].value ? this.resultForm.controls['name'].value : '',
@@ -114,7 +114,8 @@ export class AddUpdateResultComponent implements OnInit {
     };
 
     this.resultService.updateResult(this.resultViewModel).subscribe((response)=>{
-      this.route.navigate(['admin-manage-results'])
+      debugger;
+      this.route.navigate(['admin-manage-results'], { queryParams: { classId: this.classId } });
     },(error)=>{
 
     },()=>{
