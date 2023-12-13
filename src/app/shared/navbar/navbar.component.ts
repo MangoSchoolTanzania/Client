@@ -19,6 +19,7 @@ export class NavbarComponent implements OnInit {
     this.loginService.verify().subscribe((result)=>{
       this.router.navigate(['admin-panel'])
     },(error)=>{
+      console.clear();
       this.router.navigate(['/admin']);
     })
   }  

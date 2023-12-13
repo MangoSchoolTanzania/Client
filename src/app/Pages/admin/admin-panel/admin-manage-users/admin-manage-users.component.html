@@ -1,1 +1,26 @@
-<p>admin-manage-users works!</p>
+<div class="container">
+        <div class="first__row">
+            <div [formGroup]="this.UserForm" *ngIf="this.addNewUser" class="top">
+                <input formControlName="UserEmail" type="email" placeholder="Email">
+                <button class="button_element" (click)="invite()">Invite</button>
+            </div>
+        </div>
+        <div class="second__row">
+            <div class="down">
+                <button class="button_element" (click)="activateForm()">Invite a new user</button>
+                <h1 *ngIf="this.users.length == 0">You have no users added</h1>
+            </div>
+        </div>
+        <div class="third__row">
+            <div  *ngFor="let user of this.users" class="form card_manage_class">
+                <label>Name: {{user.userName}} </label>
+                <br>
+                <label>Email: {{user.userEmail}} </label>
+                <br>
+                <div class="button_element">
+                    <button id="update__button" class="action__button">Update</button>
+                    <button (click)="delete(user.id || 0)" class="action__button">Delete</button>
+                </div>
+            </div>
+        </div>
+</div>

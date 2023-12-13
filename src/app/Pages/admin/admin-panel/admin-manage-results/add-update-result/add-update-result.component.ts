@@ -114,7 +114,6 @@ export class AddUpdateResultComponent implements OnInit {
     };
 
     this.resultService.updateResult(this.resultViewModel).subscribe((response)=>{
-      debugger;
       this.route.navigate(['admin-manage-results'], { queryParams: { classId: this.classId } });
     },(error)=>{
 

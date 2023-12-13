@@ -20,6 +20,9 @@ import { AdminManageResultsComponent } from './Pages/admin/admin-panel/admin-man
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { AddUpdateResultComponent } from './Pages/admin/admin-panel/admin-manage-results/add-update-result/add-update-result.component';
 import { AdminManageClassesComponent } from './Pages/admin/admin-panel/admin-manage-classes/admin-manage-classes.component';
+import { AdminManageUsersComponent } from "./Pages/admin/admin-panel/admin-manage-users/admin-manage-users.component";
+import { AdminManageMessagesComponent } from "./Pages/admin/admin-panel/admin-manage-messages/admin-manage-messages.component";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -38,6 +41,8 @@ import { AdminManageClassesComponent } from './Pages/admin/admin-panel/admin-man
     AdminManageResultsComponent,
     AddUpdateResultComponent,
     AdminManageClassesComponent,
+    AdminManageUsersComponent,
+    AdminManageMessagesComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -45,7 +50,8 @@ import { AdminManageClassesComponent } from './Pages/admin/admin-panel/admin-man
     AppRoutingModule, 
     FontAwesomeModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [environment],
   bootstrap: [AppComponent]

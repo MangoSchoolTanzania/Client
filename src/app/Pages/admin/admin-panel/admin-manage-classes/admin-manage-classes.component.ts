@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ClassViewModel } from 'src/app/ViewModel/ClassViewModel';
 import { ClassModelView } from 'src/app/modelViews/ClassModelView';
+import { AlertService } from 'src/app/services/alert.service';
 import { ClassService } from 'src/app/services/class.service';
 
 @Component({
@@ -21,7 +22,9 @@ export class AdminManageClassesComponent implements OnInit {
     classYear: new FormControl('', Validators.required),
     classMonth: new FormControl('', Validators.required),
   });
-  constructor(private classService: ClassService,private router:Router) {
+  constructor(private classService: ClassService,
+    private router:Router,
+    private alert:AlertService) {
 
   }
   ngOnInit(): void {
@@ -40,11 +43,12 @@ export class AdminManageClassesComponent implements OnInit {
 
   addClass() { this.addNewClass = !this.addNewClass; }
   addUpdate() {
+    debugger;
     if (this.addUpdateText === 'Add') {
       this.add();
+    }else{
+      this.update(this.idToUpdate);
     }
-
-    this.update(this.idToUpdate);
   }
 
   add() {
@@ -63,9 +67,10 @@ export class AdminManageClassesComponent implements OnInit {
     this.classService.addClass(classViewModel).subscribe((response) => {
       this.addClassForm.reset();
       this.addNewClass = false;
+      this.alert.successMessage('The class was successfuly added')
       this.getClasses();
     }, (error) => {
-
+      this.alert.successMessage('Something went wrong, try again later')
     }, () => {
 
     })
@@ -84,9 +89,10 @@ export class AdminManageClassesComponent implements OnInit {
       this.addUpdateText = 'Add';
       this.addClassForm.reset();
       this.addNewClass = false;
+      this.alert.successMessage('The class was successfuly updated')
       this.getClasses();
     }, (error) => {
-
+      this.alert.successMessage('Something went wrong, try again later')
     }, () => {
 
     })
@@ -107,12 +113,13 @@ export class AdminManageClassesComponent implements OnInit {
   }
   delete(id: number) {
     this.classService.deleteClass(id).subscribe((response) => {
-      this.getClasses();
       this.addClassForm.reset();
       this.addNewClass = false;
+      this.alert.successMessage('The class was successfuly deleted')
+      this.getClasses();
 
     }, (error) => {
-
+      this.alert.successMessage('Something went wrong, try again later')
     }, () => {
 
     })

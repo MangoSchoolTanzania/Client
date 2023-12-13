@@ -1,0 +1,71 @@
+body {
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+    
+  .button_element{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #update__button{
+    display: none;
+  }
+  .container {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .first__row{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+  
+  .form>input,
+  textarea,
+  button {
+    margin-top: 0.5 rem;
+  }
+
+  .card_manage_class {
+    padding: 5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-style: solid;
+    border-radius: 1rem;
+    border-width: 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .update_delete > button {
+    margin-right: 1 rem;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .container {
+      padding: 10px;
+      flex-direction: column;
+    }
+  }
