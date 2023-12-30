@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ResultModelView } from 'src/app/modelViews/ResultModelView';
+import { ResultModelView } from 'src/app/models/modelViews/ResultModelView';
 import { results } from 'src/app/services/results.service'
 
 @Component({

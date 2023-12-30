@@ -23,5 +23,8 @@ export class AdminPanelComponent {
     if(action == 'manage-messages'){
       this.router.navigate(['admin-manage-messages']);
     }
+    if(action == 'manage-volunteers'){
+      this.router.navigate(['admin-manage-volunteers']);
+    }
   }
 }

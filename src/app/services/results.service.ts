@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { environment } from '../environment';
-import { ResultModelView } from '../modelViews/ResultModelView';
+import { ResultModelView } from '../models/modelViews/ResultModelView';
 import { Observable, map } from 'rxjs';
 import { TokenService } from './token.service';
-import { ResultViewModel } from '../ViewModel/ResultViewModel';
+import { ResultViewModel } from '../models/ViewModel/ResultViewModel';
 
 @Injectable({
   providedIn: 'root'

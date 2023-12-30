@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { InviteViewModel } from 'src/app/ViewModel/InviteViewModel';
-import { UserViewModel } from 'src/app/ViewModel/UserViewModel';
+import { InviteViewModel } from 'src/app/models/ViewModel/InviteViewModel';
+import { UserViewModel } from 'src/app/models/ViewModel/UserViewModel';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class AdminManageUsersComponent implements OnInit {
     UserEmail: new FormControl('', Validators.required),
   });
   inviteViewModel:InviteViewModel = new InviteViewModel();
-  constructor(private router:Router,private userService:UserService) {
+  constructor(private router:Router,private userService:UserService,) {
     
     
   }
@@ -37,6 +37,11 @@ export class AdminManageUsersComponent implements OnInit {
     this.addNewUser = true;
     
   }
+  
+  back(){
+    this.router.navigate(['admin-panel'])
+  }
+  
   invite(){
     this.addNewUser = false;
 

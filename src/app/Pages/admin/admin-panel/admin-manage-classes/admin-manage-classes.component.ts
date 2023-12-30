@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ClassViewModel } from 'src/app/ViewModel/ClassViewModel';
-import { ClassModelView } from 'src/app/modelViews/ClassModelView';
+import { ClassViewModel } from 'src/app/models/ViewModel/ClassViewModel';
+import { ClassModelView } from 'src/app/models/modelViews/ClassModelView';
 import { AlertService } from 'src/app/services/alert.service';
 import { ClassService } from 'src/app/services/class.service';
 
@@ -49,6 +49,10 @@ export class AdminManageClassesComponent implements OnInit {
     }else{
       this.update(this.idToUpdate);
     }
+  }
+
+  back(){
+    this.router.navigate(['admin-panel'])
   }
 
   add() {

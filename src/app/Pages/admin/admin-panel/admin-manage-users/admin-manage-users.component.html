@@ -6,12 +6,16 @@
             </div>
         </div>
         <div class="second__row">
+            <div>
+                <button (click)="back()">Back</button>
+            </div>
             <div class="down">
                 <button class="button_element" (click)="activateForm()">Invite a new user</button>
                 <h1 *ngIf="this.users.length == 0">You have no users added</h1>
             </div>
         </div>
         <div class="third__row">
+            
             <div  *ngFor="let user of this.users" class="form card_manage_class">
                 <label>Name: {{user.userName}} </label>
                 <br>

@@ -23,6 +23,7 @@ import { AdminManageClassesComponent } from './Pages/admin/admin-panel/admin-man
 import { AdminManageUsersComponent } from "./Pages/admin/admin-panel/admin-manage-users/admin-manage-users.component";
 import { AdminManageMessagesComponent } from "./Pages/admin/admin-panel/admin-manage-messages/admin-manage-messages.component";
 import { CommonModule } from "@angular/common";
+import { AdminManageVolunteersComponent } from './Pages/admin/admin-panel/admin-manage-volunteers/admin-manage-volunteers.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { CommonModule } from "@angular/common";
     AddUpdateResultComponent,
     AdminManageClassesComponent,
     AdminManageUsersComponent,
-    AdminManageMessagesComponent
+    AdminManageMessagesComponent,
+    AdminManageVolunteersComponent
   ],
   imports: [
     ReactiveFormsModule,

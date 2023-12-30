@@ -14,6 +14,7 @@ import { AdminManageUsersComponent } from "./Pages/admin/admin-panel/admin-manag
 import { AdminManageMessagesComponent } from "./Pages/admin/admin-panel/admin-manage-messages/admin-manage-messages.component";
 import { AddUpdateResultComponent } from "./Pages/admin/admin-panel/admin-manage-results/add-update-result/add-update-result.component";
 import { AdminManageClassesComponent } from "./Pages/admin/admin-panel/admin-manage-classes/admin-manage-classes.component";
+import { AdminManageVolunteersComponent } from "./Pages/admin/admin-panel/admin-manage-volunteers/admin-manage-volunteers.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'admin-manage-users', component: AdminManageUsersComponent, pathMatch: 'full' },
   { path: 'admin-manage-messages', component: AdminManageMessagesComponent, pathMatch: 'full' },
   { path: 'admin-manage-classes', component: AdminManageClassesComponent, pathMatch: 'full' },
+  { path: 'admin-manage-volunteers', component: AdminManageVolunteersComponent, pathMatch: 'full' },
   { path: 'add-update-result', component: AddUpdateResultComponent, pathMatch: 'full' },
 
 ];

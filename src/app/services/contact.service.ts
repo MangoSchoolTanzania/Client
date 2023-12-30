@@ -2,9 +2,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../environment';
 import { TokenService } from './token.service';
-import { ContactModelView } from '../modelViews/ContactModelView';
+import { ContactModelView } from '../models/modelViews/ContactModelView';
 import { Observable, map } from 'rxjs';
-import { ContactViewModel } from '../ViewModel/ContactViewModel';
+import { ContactViewModel } from '../models/ViewModel/ContactViewModel';
 
 @Injectable({
   providedIn: 'root'

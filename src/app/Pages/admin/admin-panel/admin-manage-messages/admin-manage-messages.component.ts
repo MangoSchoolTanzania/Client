@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ContactModelView } from 'src/app/modelViews/ContactModelView';
-import { ResultModelView } from 'src/app/modelViews/ResultModelView';
+import { ContactModelView } from 'src/app/models/modelViews/ContactModelView';
+import { ResultModelView } from 'src/app/models/modelViews/ResultModelView';
 import { ContactService } from 'src/app/services/contact.service';
 import { results } from 'src/app/services/results.service';
 
@@ -15,12 +15,17 @@ export class AdminManageMessagesComponent implements OnInit{
   /**
    *
    */
-  constructor(private contactService:ContactService) {
+  constructor(private contactService:ContactService,private router:Router) {
     
   }
   ngOnInit(): void {
     this.getMessages();
   }
+
+  back(){
+    this.router.navigate(['admin-panel'])
+  }
+
 
   getMessages(){
     this.contactService.getContacts().subscribe((response)=>{

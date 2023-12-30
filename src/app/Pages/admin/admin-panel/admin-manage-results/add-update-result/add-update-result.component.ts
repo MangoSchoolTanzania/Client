@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Route, Router } from '@angular/router';
-import { ResultViewModel } from 'src/app/ViewModel/ResultViewModel';
-import { ResultModelView } from 'src/app/modelViews/ResultModelView';
+import { ResultViewModel } from 'src/app/models/ViewModel/ResultViewModel';
+import { ResultModelView } from 'src/app/models/modelViews/ResultModelView';
 import { results } from 'src/app/services/results.service';
 
 @Component({

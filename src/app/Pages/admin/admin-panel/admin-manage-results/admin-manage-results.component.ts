@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ResultModelView } from 'src/app/modelViews/ResultModelView';
+import { ResultModelView } from 'src/app/models/modelViews/ResultModelView';
 import { results } from 'src/app/services/results.service';
 
 @Component({
@@ -29,6 +29,11 @@ export class AdminManageResultsComponent implements OnInit{
 
   setFormOptions(){
     this.options = [{ name:'All'}, {name: 'Class' }, { name: 'Year' }, { name: 'Student' }]
+  }
+
+  
+  back(){
+    this.router.navigate(['admin-panel'])
   }
 
   getResultsByClass(classId:number){

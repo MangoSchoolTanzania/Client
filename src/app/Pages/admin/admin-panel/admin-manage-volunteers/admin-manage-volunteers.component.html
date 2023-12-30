@@ -1,0 +1,63 @@
+<div class="container">
+    <div>
+        <button (click)="back()">Back</button>
+    </div>
+    <div class="public table-responsive">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Birth Date</th>
+                    <th scope="col">Educational Level</th>
+                    <th scope="col">School Name</th>
+                    <th scope="col">Emergency Contact Name</th>
+                    <th scope="col">Emergency Contact Number</th>
+                    <th scope="col">Emergency Relationship</th>
+                    <th scope="col">Why Do You Want to Be a Volunteer</th>
+                    <th scope="col">Volunteer Experiences</th>
+                    <th scope="col">Interests and Skills</th>
+                    <th scope="col">IsValid</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of volunteers; let i = index">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{ item.firstName }}</td>
+                    <td>{{ item.lastName }}</td>
+                    <td>{{ item.email }}</td>
+                    <td>{{ item.phone }}</td>
+                    <td>{{ item.birthDate | date: 'yyyy/MM/dd' }}</td>
+                    <td>{{ item.educationalLevel }}</td>
+                    <td>{{ item.schoolName }}</td>
+                    <td>{{ item.emergencyContactName }}</td>
+                    <td>{{ item.emergencyContactNumber }}</td>
+                    <td>{{ item.emergencyRelashionship }}</td>
+                    <td>{{ item.whyDoUWantToBeAVolunteer }}</td>
+                    <td>{{ item.volunteerExperiences }}</td>
+                    <td>{{ item.interestsAndSkills }}</td>
+                    <td>{{ item.isValid ? 'Yes' : 'No' }}</td>
+                    <td>
+                      <button id="update__button" class="action__button">Update</button>
+                      <button (click)="delete(item.id)" class="action__button">Delete</button>
+                    </td>
+                  </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

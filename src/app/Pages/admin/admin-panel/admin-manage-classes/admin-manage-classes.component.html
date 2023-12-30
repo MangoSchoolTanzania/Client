@@ -1,5 +1,7 @@
 <div class="container">
+    
     <div class="left">
+        
         <img src="../../../../assets/svg/admin.svg" alt="">
     </div>
     <div class="right">
@@ -10,9 +12,13 @@
             <button class="button_element" (click)="addUpdate()">{{this.addUpdateText}}</button>
         </div>
         <div class="down">
+            <div>
+                <button (click)="back()">Back</button>
+            </div>
             <button class="button_element" (click)="addClass()">Add a new Class</button>
             <h1 *ngIf="this.classes.length == 0">You have no classes added</h1>
         </div>
+        
         <div (click)="showResults(class.id)" *ngFor="let class of this.classes" class="form card_manage_class">
             <label>Name: {{class.name}} </label>
             <br>

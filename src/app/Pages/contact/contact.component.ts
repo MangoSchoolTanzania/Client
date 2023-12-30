@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ContactViewModel } from 'src/app/ViewModel/ContactViewModel';
+import { ContactViewModel } from 'src/app/models/ViewModel/ContactViewModel';
+import { AlertService } from 'src/app/services/alert.service';
 import { ContactService } from 'src/app/services/contact.service';
 
 @Component({
@@ -17,7 +18,8 @@ export class ContactComponent implements OnInit {
     message: new FormControl(null, Validators.required),
   });
 
-  constructor(private contactService:ContactService) {
+  constructor(private contactService:ContactService,
+    private alert:AlertService) {
     
   }
 
@@ -37,8 +39,9 @@ export class ContactComponent implements OnInit {
     }    
     this.contactService.postContact(this.contactViewModel).subscribe((response)=>{
       this.contactForm.reset();
+      this.alert.successMessage('The message was successfuly sent')
     },(error)=>{
-
+      this.alert.successMessage('Something went wrong, Try again later')
     })
   }
 }

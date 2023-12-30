@@ -2,9 +2,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../environment';
 import { TokenService } from './token.service';
-import { UserViewModel } from '../ViewModel/UserViewModel';
+import { UserViewModel } from '../models/ViewModel/UserViewModel';
 import { map } from 'rxjs';
-import { InviteViewModel } from '../ViewModel/InviteViewModel';
+import { InviteViewModel } from '../models/ViewModel/InviteViewModel';
 
 @Injectable({
   providedIn: 'root'

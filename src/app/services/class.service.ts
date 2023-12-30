@@ -1,10 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../environment';
-import { ClassViewModel } from '../ViewModel/ClassViewModel';
+import { ClassViewModel } from '../models/ViewModel/ClassViewModel';
 import { TokenService } from './token.service';
 import { map } from 'rxjs';
-import { ClassModelView } from '../modelViews/ClassModelView';
+import { ClassModelView } from '../models/modelViews/ClassModelView';
 
 @Injectable({
   providedIn: 'root'
