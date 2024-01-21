@@ -14,7 +14,7 @@ export class FooterComponent implements OnInit {
   }
 
   visitSocialMedia(media:number){
-    media === 1 ? window.open('https://instagram.com/mango_school?igshid=MzNlNGNkZWQ4Mg==') : window.open('https://www.facebook.com/MangoEnglishMediumSchool?mibextid=ZbWKwL');
+    media === 1 ? window.open('https://instagram.com/mango_school') : window.open('https://www.facebook.com/MangoEnglishMediumSchool?mibextid=ZbWKwL');
   }
 
 }

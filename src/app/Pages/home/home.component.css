@@ -95,5 +95,10 @@
     .left > img {
       width: 100%;
     }
+
+    .right{
+      padding: 0rem;
+      margin: 0;
+    }
   }
   

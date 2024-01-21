@@ -15,5 +15,7 @@ export class TokenService {
     return localStorage.getItem('jwtKey')
   }
 
-
+  clearToken(){
+    localStorage.removeItem('jwtKey');
+  }
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-admin-panel',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AdminPanelComponent {
 
-  constructor(private router: Router) {
+  constructor(private router: Router,private tokenService:TokenService) {
 
   }
 
@@ -25,6 +26,10 @@ export class AdminPanelComponent {
     }
     if(action == 'manage-volunteers'){
       this.router.navigate(['admin-manage-volunteers']);
+    }
+    if(action == 'logout'){
+      this.tokenService.clearToken();
+      this.router.navigate(['admin']);
     }
   }
 }

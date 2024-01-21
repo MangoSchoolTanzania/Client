@@ -8,11 +8,10 @@ body {
 
 .footer {
   background-color: var(--background-primary);
+  min-height: 30rem;
   color: var(--text-primary);
   padding: 20px 0;
-  position: relative;
   bottom: 0;
-  width: 100%;
 }
 
 .container {
