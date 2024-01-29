@@ -96,7 +96,7 @@ input:hover {
   /* global card */ 
   .card {
     width: 80%;
-    margin: 0 auto; /* Center the card horizontally */
+    margin: 0 auto;
     padding: 5rem;
     border-style: solid;
     border-radius: 1rem;

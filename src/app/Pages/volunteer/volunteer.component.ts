@@ -60,8 +60,6 @@ export class VolunteerComponent implements OnInit {
     },(error)=>{
 
     })
-
-
   }
 
   createVolunteerViewModel(): VolunteerViewModel {
@@ -84,5 +82,4 @@ export class VolunteerComponent implements OnInit {
     volunteerModel.IsValid = this.volunteerForm.controls['isValid'].value || false;
     return volunteerModel;
   }
-
 }

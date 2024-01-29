@@ -1,7 +1,5 @@
 <div class="container">
-    <div class="left">
-    </div>
-    <div class="right">
+    <div class="container__row">
         <div *ngFor="let photo of photoPathArray">
             <img [src]="photo" class="photos" loading="lazy" alt="">
         </div>

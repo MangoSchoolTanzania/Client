@@ -1,13 +1,15 @@
 <div class="container">
-    <div class="left">
-        <img src="../../assets/svg/contactUs.svg" alt="">
+    <div class="container__row">
+        <div class="left">
+            <img src="../../assets/svg/contactUs.svg" alt="">
+        </div>
+        <form class="right" [formGroup]="contactForm">
+            <label *ngIf="this.invalidForm" class="error">Please fill all the blanks</label>
+            <h1>Write your message:</h1>
+            <input formControlName="name" type="text" placeholder="Name">
+            <input formControlName="email" type="email" placeholder="Email">
+            <textarea formControlName="message" name="" id="" cols="30" rows="10" placeholder="message"></textarea>
+            <button (click)="send()">Send</button>
+        </form>
     </div>
-    <form class="right" [formGroup]="contactForm">
-        <label *ngIf="this.invalidForm" class="error">Please fill all the blanks</label>
-        <h1>Write your message:</h1>
-        <input formControlName="name" type="text" placeholder="Name">
-        <input formControlName="email" type="email" placeholder="Email">
-        <textarea formControlName="message" name="" id="" cols="30" rows="10" placeholder="message"></textarea>
-        <button (click)="send()">Send</button>
-    </form>
 </div>

@@ -1,37 +1,38 @@
 <div class="container">
-    <div class="left">
-        <img src="../../assets/svg/admin.svg" alt="">
-    </div>
-    <div class="public table-responsive right">
-        <div>
-            <button (click)="back()">Back</button>
+    <div class="container__row">
+        <div class="left">
+            <img src="../../assets/svg/admin.svg" alt="">
         </div>
-        <br>
-        <table class="table ">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Message</th>
-                    <th scope="col">Delete</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let item of this.messages; let i = index">
-                    <th scope="row">{{ i + 1 }}</th>
-                    <td>{{ item.createDate | date: 'yyyy/MM/dd'}}</td>
-                    <td>{{ item.name }}</td>
-                    <td>{{ item.email }}</td>
-                    <td>{{ item.message }}</td>
-                    <td>
-                        <button id="update__button"  class="action__button">Update</button>
-                        <button (click)="delete(item.id)" class="action__button">Delete</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-
+        <div class="public table-responsive right">
+            <div>
+                <button (click)="back()">Back</button>
+            </div>
+            <br>
+            <table class="table ">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Message</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of this.messages; let i = index">
+                        <th scope="row">{{ i + 1 }}</th>
+                        <td>{{ item.createDate | date: 'yyyy/MM/dd'}}</td>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.email }}</td>
+                        <td>{{ item.message }}</td>
+                        <td>
+                            <button id="update__button"  class="action__button">Update</button>
+                            <button (click)="delete(item.id)" class="action__button">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

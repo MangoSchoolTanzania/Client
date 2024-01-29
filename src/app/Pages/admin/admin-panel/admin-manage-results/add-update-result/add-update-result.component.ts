@@ -87,7 +87,6 @@ export class AddUpdateResultComponent implements OnInit {
     });
   }
   send(){
-    debugger;
     if(this.isUpdateContext){
       this.update();
     }

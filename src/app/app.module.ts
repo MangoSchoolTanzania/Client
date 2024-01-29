@@ -24,6 +24,7 @@ import { AdminManageUsersComponent } from "./Pages/admin/admin-panel/admin-manag
 import { AdminManageMessagesComponent } from "./Pages/admin/admin-panel/admin-manage-messages/admin-manage-messages.component";
 import { CommonModule } from "@angular/common";
 import { AdminManageVolunteersComponent } from './Pages/admin/admin-panel/admin-manage-volunteers/admin-manage-volunteers.component';
+import { SettingsComponent } from './Pages/settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { AdminManageVolunteersComponent } from './Pages/admin/admin-panel/admin-
     AdminManageClassesComponent,
     AdminManageUsersComponent,
     AdminManageMessagesComponent,
-    AdminManageVolunteersComponent
+    AdminManageVolunteersComponent,
+    SettingsComponent
   ],
   imports: [
     ReactiveFormsModule,

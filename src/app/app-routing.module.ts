@@ -15,12 +15,14 @@ import { AdminManageMessagesComponent } from "./Pages/admin/admin-panel/admin-ma
 import { AddUpdateResultComponent } from "./Pages/admin/admin-panel/admin-manage-results/add-update-result/add-update-result.component";
 import { AdminManageClassesComponent } from "./Pages/admin/admin-panel/admin-manage-classes/admin-manage-classes.component";
 import { AdminManageVolunteersComponent } from "./Pages/admin/admin-panel/admin-manage-volunteers/admin-manage-volunteers.component";
+import { SettingsComponent } from "./Pages/settings/settings.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'about', component: AboutComponent, pathMatch: 'full' },
   { path: 'contact', component: ContactComponent, pathMatch: 'full' },
   { path: 'gallery', component: GalleryComponent, pathMatch: 'full' },
+  { path: 'settings', component: SettingsComponent, pathMatch: 'full' },
   { path: 'results', component: ResultsComponent, pathMatch: 'full' },
   { path: 'scholarship', component: ScholarshipComponent, pathMatch: 'full' },
   { path: 'volunteer', component: VolunteerComponent, pathMatch: 'full' },

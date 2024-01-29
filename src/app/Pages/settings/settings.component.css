@@ -9,19 +9,12 @@
 
   .container__row{
     display: flex;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    display: flex;
     margin-left: 5rem;
     margin-right: 5rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
   }
-  
-  .form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-  }
+
   
   .right {
     width: 100%;
@@ -45,23 +38,14 @@
     align-items: center;
     flex-direction: column;
   }
-  
-  .form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-  }
-  
-  .form>input,
-  textarea,
-  button {
-    margin-top: 0.5 rem;
-  }
-  
+
+    
   @media only screen and (max-width: 600px) {
-    .container {
-      padding: 10px;
-      flex-direction: column;
+    .left{
+      display: none;
+    }
+    .container{
+      height: 100vh;
     }
   }
+  

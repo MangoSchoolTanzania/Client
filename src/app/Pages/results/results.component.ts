@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ResultModelView } from 'src/app/models/modelViews/ResultModelView';
+import { AlertService } from 'src/app/services/alert.service';
 import { results } from 'src/app/services/results.service'
 
 @Component({
   selector: 'app-results',
   templateUrl: './results.component.html',
-  styleUrls: ['./results.component.css']
+  styleUrls: ['./results.component.css'],
 })
 export class ResultsComponent implements OnInit {
   currentPage = 0;
@@ -17,7 +18,7 @@ export class ResultsComponent implements OnInit {
   filterSelectedValue = 'All';
   stringParam = 'All'
 
-  constructor(private results: results) {
+  constructor(private results: results,private alert:AlertService) {
 
   }
 
@@ -31,10 +32,13 @@ export class ResultsComponent implements OnInit {
   }
 
   getGrade() {
+    this.alert.loading(true);
     this.results.getGrade(this.currentPage,this.filterSelectedValue,this.stringParam).subscribe((response) => {
       this.resultArray = response;
+      this.alert.loading(false);
     }, (error) => {
-      console.error('Error:', error);
+      this.alert.loading(false);
+      this.alert.errorMessage('Something went wrong, try again later')
     }, () => {
 
     })

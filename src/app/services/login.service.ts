@@ -24,7 +24,6 @@ export class LoginService {
   }
 
   verify(){
-    debugger;
     const token = this.tokenService.getFromLocalsotrage();
     const httpOptions = {
       headers: new HttpHeaders({

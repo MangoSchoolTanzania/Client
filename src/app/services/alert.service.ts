@@ -24,6 +24,21 @@ export class AlertService {
     });
   }
 
+  loading(isLoading:boolean){
+    if(isLoading){
+      Swal.fire({
+        icon: "info",
+        title: "Loading...",
+      });
+      return;
+    }
+
+    if(!isLoading){
+      Swal.close();
+    }
+    
+  }
+
   infoMessage(message:string){
     Swal.fire({
       icon: "info",

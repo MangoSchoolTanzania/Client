@@ -1,14 +1,17 @@
-body {
-  background-color: var(--background-primary);
-  color: var(--text-primary);
+
+.container {
+  width: 100%;
+  background-color: var(--text-primary);
+  color: var(--background-primary);
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
-.container {
-  max-width: 100%;
-  margin: 0 auto;
+.container__row{
+  display: flex;
+  margin-right: 5rem;
+  margin-left: 5rem;
   display: flex;
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -61,5 +64,9 @@ button {
   .container {
     padding: 10px;
     flex-direction: column;
+  }
+
+  .left{
+    display: none;
   }
 }

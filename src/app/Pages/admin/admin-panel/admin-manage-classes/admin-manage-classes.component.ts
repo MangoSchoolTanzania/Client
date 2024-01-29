@@ -43,7 +43,6 @@ export class AdminManageClassesComponent implements OnInit {
 
   addClass() { this.addNewClass = !this.addNewClass; }
   addUpdate() {
-    debugger;
     if (this.addUpdateText === 'Add') {
       this.add();
     }else{

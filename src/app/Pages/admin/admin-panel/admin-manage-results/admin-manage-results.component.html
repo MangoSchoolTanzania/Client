@@ -1,4 +1,5 @@
 <div class="container">
+  <div class="container__row">
     <div class="grid">
       <div class="access">
       </div>
@@ -52,8 +53,10 @@
           </tbody>
         </table>
       </div>
-      <div>
+      <div *ngIf="this.resultArray == []">
        <h1>No Results, add a new one</h1> 
       </div>
     </div>
+  </div>
+   
   </div>

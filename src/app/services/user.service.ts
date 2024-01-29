@@ -33,7 +33,6 @@ export class UserService {
   }
 
   inviteUser(invite:InviteViewModel){
-    debugger;
     const token = this.tokenService.getFromLocalsotrage();
     const httpOptions = {
       headers: new HttpHeaders({

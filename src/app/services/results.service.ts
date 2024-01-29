@@ -25,7 +25,6 @@ export class results{
   }
 
   getResultByClass(classId:number){
-    debugger;
     const token = this.tokenService.getFromLocalsotrage();
     const httpOptions = {
       headers: new HttpHeaders({

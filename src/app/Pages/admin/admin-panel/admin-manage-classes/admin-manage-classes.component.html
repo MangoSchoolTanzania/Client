@@ -1,33 +1,34 @@
 <div class="container">
-    
-    <div class="left">
+    <div class="container__row">
+        <div class="left">
         
-        <img src="../../../../assets/svg/admin.svg" alt="">
-    </div>
-    <div class="right">
-        <div [formGroup]="addClassForm" *ngIf="this.addNewClass" class="top">
-            <input formControlName="className" type="text" placeholder="Class Name">
-            <input formControlName="classYear" type="text" placeholder="Class Year">
-            <input formControlName="classMonth" type="text" placeholder="Class Month">
-            <button class="button_element" (click)="addUpdate()">{{this.addUpdateText}}</button>
+            <img src="../../../../assets/svg/admin.svg" alt="">
         </div>
-        <div class="down">
-            <div>
-                <button (click)="back()">Back</button>
+        <div class="right">
+            <div [formGroup]="addClassForm" *ngIf="this.addNewClass" class="top">
+                <input formControlName="className" type="text" placeholder="Class Name">
+                <input formControlName="classYear" type="text" placeholder="Class Year">
+                <input formControlName="classMonth" type="text" placeholder="Class Month">
+                <button class="button_element" (click)="addUpdate()">{{this.addUpdateText}}</button>
             </div>
-            <button class="button_element" (click)="addClass()">Add a new Class</button>
-            <h1 *ngIf="this.classes.length == 0">You have no classes added</h1>
-        </div>
-        
-        <div (click)="showResults(class.id)" *ngFor="let class of this.classes" class="form card_manage_class">
-            <label>Name: {{class.name}} </label>
-            <br>
-            <label>Month: {{class.month}} </label>
-            <br>
-            <label>Year: {{class.year}} </label>
-            <div class="button_element">
-                <button (click)="updateLabel(class.id)" class="action__button">Update</button>
-                <button (click)="delete(class.id)" class="action__button">Delete</button>
+            <div class="down">
+                <div>
+                    <button (click)="back()">Back</button>
+                </div>
+                <button class="button_element" (click)="addClass()">Add a new Class</button>
+                <h1 *ngIf="this.classes.length == 0">You have no classes added</h1>
+            </div>
+            
+            <div (click)="showResults(class.id)" *ngFor="let class of this.classes" class="form card_manage_class">
+                <label>Name: {{class.name}} </label>
+                <br>
+                <label>Month: {{class.month}} </label>
+                <br>
+                <label>Year: {{class.year}} </label>
+                <div class="button_element">
+                    <button (click)="updateLabel(class.id)" class="action__button">Update</button>
+                    <button (click)="delete(class.id)" class="action__button">Delete</button>
+                </div>
             </div>
         </div>
     </div>

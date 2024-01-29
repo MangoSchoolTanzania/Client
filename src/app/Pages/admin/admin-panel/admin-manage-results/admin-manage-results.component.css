@@ -1,19 +1,24 @@
 body {
-    background-color: var(--background-primary);
-    color: var(--text-primary);
+  }
+  
+  .container {
+    width: 100%;
+    background-color: var(--text-primary);
+    color: var(--background-primary);
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
   }
-  
-  .container {
-    max-width: 100%;
-    margin: 0 auto;
+
+  .container__row{
     padding-left: 3rem;
     padding-right: 3rem;
     margin-top: 3rem;
     margin-bottom: 3rem;
     text-align: justify;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   p {

@@ -1,4 +1,5 @@
 <div class="container">
+    <div class="container__row">
         <div class="first__row">
             <div [formGroup]="this.UserForm" *ngIf="this.addNewUser" class="top">
                 <input formControlName="UserEmail" type="email" placeholder="Email">
@@ -27,4 +28,5 @@
                 </div>
             </div>
         </div>
+    </div>
 </div>
